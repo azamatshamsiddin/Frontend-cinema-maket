@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7-1</title>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    Some text here!
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/all.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <title>7-1</title>
+</head>
+
+<body>
+  <section class="header-section">
+    <header class="header">
+      <div class="container header-body">
+        <a href="#" class="header__logo logo"> LOGO </a>
+        <input class="header-search__input search__input" id="search" type="search" autocomplete="off" />
+        <button class="search__btn" type="button">
+          <i class="search__icon fas fa-search"></i>
+        </button>
+
+
+        <div class="header-right">
+          <button class="header-right__btn btn-mark" type="button">
+            <i class="header-right__icon far fa-bookmark"></i>
+          </button>
+          <button class="header-right__btn btn-search" type="button">
+            <i class="header-right__icon fas fa-filter"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <section class="section-films">
+    <div class="container">
+      <div class="films">
+        <ul class="films-list">
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="./scripts/films.js"></script>
+  <script src="./scripts/script.js"></script>
+</body>
+
 </html>
