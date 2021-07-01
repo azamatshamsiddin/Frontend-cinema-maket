@@ -2177,7 +2177,7 @@ readers do not read off random characters that represent icons */
   content: "\f008";
 }
 
-.fa-filter:before {
+.fa-filter::before {
   content: "\f0b0";
 }
 

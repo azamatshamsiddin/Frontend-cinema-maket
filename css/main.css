@@ -421,6 +421,10 @@ template {
   line-height: 3.8rem;
 }
 
+.header__logo:hover {
+  opacity: .8;
+}
+
 .header-body {
   display: flex;
   align-items: center;
@@ -459,17 +463,30 @@ template {
 
 .header-right__btn {
   background-color: transparent;
-  display: inline-block;
   border: transparent;
-  font-size: 2.2rem;
-  cursor: pointer;
-  color: #fff;
-  margin-right: 3rem;
+  display: inline-block;
+  outline: none;
+  width: 6.5rem;
+  height: 5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 1rem;
   transition: all ease .3s;
+  font-size: 1.6rem;
+  color: grey;
+  cursor: pointer;
 }
 
 .header-right__btn:hover {
-  color: #5931ac;
+  color: #fff;
+  background-color: #5931ac;
+}
+
+.search__form {
+  width: 60%;
+  margin-left: 8rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .search__input {
@@ -481,9 +498,9 @@ template {
   font-size: 1.7rem;
   font-weight: 400;
   height: 5rem;
-  width: 60%;
-  margin-left: 8rem;
+  width: 90%;
   transition: all ease .3s;
+  appearance: none;
 }
 
 .search__input:focus {
@@ -505,9 +522,68 @@ template {
   cursor: pointer;
 }
 
-.search__btn:hover {
+.search__btn:hover, .search__btn:focus {
   background-color: #5931ac;
   color: #fff;
+}
+
+.filter {
+  display: flex;
+  width: 100%;
+}
+
+.filter__form {
+  position: relative;
+}
+
+.filter__select {
+  outline: none;
+  border: transparent;
+  display: inline-block;
+  padding: 1.2rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  width: 17rem;
+  transition: all ease .3s;
+}
+
+.filter__select:focus {
+  box-shadow: 0 0 20px #5931AC;
+}
+
+.filter__select-custom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  width: 4rem;
+  height: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  pointer-events: none;
+}
+
+.filter__select-custom::before, .filter__select-custom::after {
+  --size: .6rem;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.filter__select-custom::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid #5931ac;
+}
+
+.filter__option {
+  font-size: 1.4rem;
 }
 
 .section-films {
@@ -586,12 +662,12 @@ template {
 }
 
 .film__genres {
+  list-style: none;
   display: inline-block;
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
   font-weight: 600;
   color: #13121a;
-  text-decoration: none;
   border-radius: 50px;
   color: #fff;
 }
@@ -633,11 +709,35 @@ template {
 .genres-box {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 2rem;
   margin-bottom: 2rem;
 }
 
-.genres-box a:not(:last-child) {
+.genres-box li {
+  margin-bottom: 1rem;
+}
+
+.genres-box li:not(:last-child) {
   margin-right: 1rem;
+}
+
+.genres-box li:nth-child(2n+1) {
+  background-color: #5931ac;
+}
+
+.genres-box li:nth-child(1) {
+  background-color: #f4415f;
+}
+
+.genres-box li:nth-child(2) {
+  background-color: #fff;
+  color: #13121a;
+}
+
+.genres-box li:nth-child(3) {
+  background-color: #5931ac;
 }
 
 /*

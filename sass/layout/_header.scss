@@ -18,6 +18,10 @@
     text-decoration: none;
     font-size: 2.4rem;
     line-height: 3.8rem;
+
+    &:hover {
+      opacity: .8;
+    }
   }
 }
 
@@ -65,21 +69,33 @@
 
   &__btn {
     background-color: transparent;
-    display: inline-block;
     border: transparent;
-    font-size: 2.2rem;
-    cursor: pointer;
-    color: $color-white;
-    margin-right: 3rem;
+    display: inline-block;
+    outline: none;
+    width: 6.5rem;
+    height: 5rem;
+    background-color: $color-white;
+    border-radius: 50%;
+    margin-left: 1rem;
     transition: all ease .3s;
+    font-size: 1.6rem;
+    color: grey;
+    cursor: pointer;
 
     &:hover {
-      color: $color-primary;
+      color: $color-white;
+      background-color: $color-primary;
     }
   }
 }
 
 .search {
+  &__form {
+    width: 60%;
+    margin-left: 8rem;
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__input {
     outline: none;
@@ -90,9 +106,9 @@
     font-size: 1.7rem;
     font-weight: 400;
     height: 5rem;
-    width: 60%;
-    margin-left: 8rem;
+    width: 90%;
     transition: all ease .3s;
+    appearance: none;
 
     &:focus {
       box-shadow: 0 0 20px #5931AC;
@@ -113,9 +129,68 @@
     color: grey;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-primary;
       color: $color-white;
     }
+  }
+}
+
+.filter {
+  display: flex;
+  width: 100%;
+
+  &__form {
+    position: relative;
+  }
+
+  &__select {
+    outline: none;
+    border: transparent;
+    display: inline-block;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: 17rem;
+    transition: all ease .3s;
+
+    &:focus {
+      box-shadow: 0 0 20px #5931AC;
+    }
+  }
+
+  &__select-custom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $color-white;
+    width: 4rem;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      --size: .6rem;
+
+      @include baElements(0, 0);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      border-left: var(--size) solid transparent;
+      border-right: var(--size) solid transparent;
+      border-top: var(--size) solid $color-primary;
+    }
+  }
+
+  &__option {
+    font-size: 1.4rem;
   }
 }
